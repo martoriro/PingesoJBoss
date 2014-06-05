@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputScript name="js/fullScreen.js" />
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panelGrid columns="3" styleClass="panelGridForm">
+                <p:outputLabel value="Rut Paciente: " for="rutCM"/>                            
+                <p:autoComplete id="rutCM" forceSelection="true" value="#{newDiagnostic.pathology}" completeMethod="#{newDiagnostic.completeTextPathology}" /> 
+                <p:commandButton value="Seleccionar" id="btnSeleccionarCM" icon="ui-icon-check"/>
+            </p:panelGrid>            
+            <p:panelGrid columns="5" styleClass="panelGridForm">
+                <p:commandButton value="Datos del Paciente" id="btnDataCM" icon="ui-icon-person"/>
+                <p:commandButton value="Diagnóstico" id="btnDiagnosticCM" icon="ui-icon-circle-plus"/>
+                <p:commandButton value="Tratamiento" id="btnTreatmentCM" icon="ui-icon-circle-plus"/>
+                <p:commandButton value="Exámenes" id="btnExamsCM" icon="ui-icon-circle-plus"/>
+                <p:commandButton value="Formularios GES" id="btnGesCM" icon="ui-icon-circle-plus"/>
+            </p:panelGrid>
+            <br/>
+            <p:panelGrid columns="2" styleClass="panelGridForm">
+                <p:outputLabel value="Paciente: "/>                            
+                <p:outputLabel value="" id="name"/>
+            </p:panelGrid>  
+
+            <p:panelGrid style="margin-top:20px" styleClass="panelGridForm">    
+
+                <p:row>
+                    <p:column colspan="2">Evolución Clínica:</p:column>
+                    <p:column colspan="2">Diagnósticos Anteriores:</p:column>
+                </p:row>
+                <p:row>
+                    <p:column colspan="2"><p:inputTextarea cols="50" rows="8" autoResize="false"/></p:column>
+                    <p:column colspan="2">http://www.primefaces.org/showcase/ui/data/datatable/lazy.xhtml o http://www.primefaces.org/showcase/ui/data/datatable/filter.xhtml</p:column>
+                </p:row>
+                <p:row>
+                    <p:column colspan="2"> <p:commandButton value="Guardar" id="btnGuardarCM" icon="ui-icon-disk"/></p:column>
+                    <p:column colspan="2">http://www.primefaces.org/showcase/ui/data/datatable/lazy.xhtml o http://www.primefaces.org/showcase/ui/data/datatable/filter.xhtml</p:column>
+                </p:row>
+            </p:panelGrid>
+
+        </h:form>
+    </h:body>
+</html>
+

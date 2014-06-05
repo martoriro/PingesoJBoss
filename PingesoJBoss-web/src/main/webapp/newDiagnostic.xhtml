@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <h:outputStylesheet name="./css/default.css"/>
+        <title>Nueva Hipótesis Diagnóstica</title>
+    </h:head>
+    <h:body>
+        <h:form id="newDiagnosticForm">
+            <p:growl id="gNewDiagnostic" showDetail="true" sticky="false" life="6000" />  
+            <p:panelGrid columns="2" styleClass="panelGridForm">
+                <p:outputLabel value="Patología:" for="pathologyND"  />
+                <p:autoComplete id="pathologyND" value="#{newDiagnostic.pathology}" completeMethod="#{newDiagnostic.completeTextPathology}" forceSelection="true">
+                    <p:ajax event="blur" listener ="#{newDiagnostic.warningGest}" update="gNewDiagnostic btnGesND" />
+                </p:autoComplete>
+                <p:outputLabel value="Estado del Diagnóstico:" for="stateDiagnosticND" />
+                <p:selectOneMenu id="stateDiagnosticND" value="#{newDiagnostic.stateDiagnostic}">
+                    <p:ajax update="gNewDiagnostic btnGesND" listener="#{newDiagnostic.warningGest}" />
+                    <f:selectItem itemLabel="Seleccione un Item" itemValue="" />
+                    <f:selectItem itemLabel="Sospecha" itemValue="sospecha" />
+                    <f:selectItem itemLabel="Confirmado" itemValue="confirmado" />                    
+                </p:selectOneMenu>               
+            </p:panelGrid>
+            <p:panelGrid columns="1" styleClass="panelGridForm">
+                <p:outputLabel value="Comentarios:" for="commentsND" />
+                <p:editor id="commentsND" widgetVar="editorWidget" value="#{newDiagnostic.comments}" width="400" height="150" />                
+            </p:panelGrid>
+            <p:accordionPanel id="gesInfoND" style="margin:7px;">
+                <p:tab title="Información Formulario GES" >
+                    <h:panelGrid columns="2" cellpadding="10">
+                        <p:outputLabel value="Problema Salud AUGE"/>
+                        <p:inputText/>
+                        <p:outputLabel value="Subproblema AUGE"/>
+                        <p:inputText/>
+                        <p:outputLabel value="Fecha Límite:"/>
+                        <p:inputText/>
+                    </h:panelGrid>
+                </p:tab>
+            </p:accordionPanel>
+            <div class="btnPanelGrid">
+                <p:commandButton value="Guardar" update="newDiagnosticForm" process="@this" icon="ui-icon-disk">
+                    <p:resetInput target="newDiagnosticForm" />
+                </p:commandButton>
+                <p:commandButton id="btnGesND" value="GES"  icon="ui-icon-note" disabled="#{newDiagnostic.stateGes}" />
+                <p:commandButton value="Cancelar" actionListener="#{index.closeNewDiagnostic}" icon="ui-icon-close"/>
+            </div>
+        </h:form>
+    </h:body>
+</html>
+

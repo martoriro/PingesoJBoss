@@ -1,0 +1,13 @@
+Instalar proyecto:
+
+1.- Entrar a la consola de administración de JBoss (localhost:9990).
+2.- Entrar a Runtime->Manage Deployments.
+3.- Add->Examinar->Postgresql driver (Bajarlo de http://jdbc.postgresql.org/download/postgresql-9.3-1101.jdbc4.jar)
+4.- Click al driver agregado->Click Botón En/Disable (debe quedar con un ticket)
+5.- Ir a Profile->Connector->Datasources.
+6.- Add->Name: PingesoDB JNDI: java:jboss/GrupoUNO_BD
+7.- Seleccionar driver postgres (postgresql-9-.3etc...)
+8.- Connection URL: jdbc:postgresql://localhost:5432/BL Username: postgres Password: pingesoUNO (Esto puede variar segun su configuración de postgres).
+9.- Click en el JDBC creado y click en botón Enable.
+
+Listo !

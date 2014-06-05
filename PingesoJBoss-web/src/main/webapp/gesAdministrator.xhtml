@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <h:outputStylesheet name="./css/default.css"/>
+        <title>Administración GES</title>
+    </h:head>
+    <h:body>
+        <h:form id="GesAdministratorForm">
+            <p:panelGrid styleClass="panelGridForm">
+                <p:row>
+                    <p:column colspan="2">
+                        <br/>
+                        <p:outputLabel value="Diagnosticos GES: "/>
+                        <br/>
+                    </p:column>
+                </p:row>
+                <p:row>
+                    <p:column>
+                        <p:selectOneListbox id="listGestAG" >
+                            <f:selectItem itemLabel="Option 1" itemValue="1" />
+                            <f:selectItem itemLabel="Option 2" itemValue="2" />
+                            <f:selectItem itemLabel="Option 3" itemValue="3" />
+                            <f:selectItem itemLabel="Option 4" itemValue="1" />
+                            <f:selectItem itemLabel="Option 5" itemValue="2" />
+                            <f:selectItem itemLabel="Option 6" itemValue="3" />
+                            <f:selectItem itemLabel="Option 7" itemValue="1" />
+                            <f:selectItem itemLabel="Option 8" itemValue="2" />
+                            <f:selectItem itemLabel="Option 9" itemValue="3" />
+                        </p:selectOneListbox>                  
+                    </p:column>
+                    <p:column>
+                        <p:dataTable id="formGesGA" var="evolution"  paginator="true" 
+                                     paginatorPosition="bottom" rows="2" selectionMode="single"  
+                                      emptyMessage="El paciente no registra formularios GES">
+                            <p:ajax event="rowSelect" />
+                            <f:facet name="header"> Formularios GES creados </f:facet>
+                            <p:column headerText="ID" > 
+                                <h:outputText/> 
+                            </p:column>
+                            <p:column headerText="Fecha"> 
+                                <h:outputText /> 
+                            </p:column> 
+                            <p:column headerText="Contenido"> 
+                                <h:outputText  /> 
+                            </p:column> 
+                        </p:dataTable>                  
+                    </p:column>
+                </p:row>
+
+                <p:row>
+                    <p:column colspan="2">
+                        <p:commandButton value="Seleccionar" icon="ui-icon-check"/>
+                        
+                    </p:column>                   
+                </p:row>
+            </p:panelGrid>
+        </h:form>
+    </h:body>
+</html>

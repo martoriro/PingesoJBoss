@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <h:outputStylesheet name="./css/default.css"/>
+        <title>Nuevo Informe Proceso Diagnostico</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panelGrid columns="2" styleClass="panelGridForm">
+                <p:outputLabel value="Problema salud AUGE" for="healthproblemIPD"/>
+                <p:selectOneMenu id="healthproblemIPD">
+                    <f:selectItem itemLabel="1" itemValue="1"/>
+                    <f:selectItem itemLabel="2" itemValue="2"/>
+                    <f:selectItem itemLabel="3" itemValue="3"/>
+                </p:selectOneMenu>
+                <p:outputLabel value="Subproblema salud AUGE" for="healthsubproblemIPD"/>
+                <p:selectOneMenu id="healthsubproblemIPD">
+                    <f:selectItem itemLabel="1" itemValue="1"/>
+                    <f:selectItem itemLabel="2" itemValue="2"/>
+                    <f:selectItem itemLabel="3" itemValue="3"/>
+                </p:selectOneMenu>
+                <p:outputLabel value="Confirma que el diagnostico pertenece al AUGE" for="confirmIPD"/>
+                <p:selectBooleanCheckbox id="confirmIPD" value=""/>
+            </p:panelGrid>
+            <p:panelGrid styleClass="panelGridForm">
+                <p:row>
+                    <p:column>
+                        <p:outputLabel value="Diagnostico:" for="diagnosticIPD"/>
+                        <p:editor id="diagnosticIPD" widgetVar="editorWidget" value="" width="600" />
+                    </p:column>
+                    <p:column>
+                        <p:outputLabel value="Fundamento Diagnostico:" for="diagnosticfIPD"/>
+                        <p:editor id="diagnosticfIPD" widgetVar="editorWidget" value="" width="600" />            
+                    </p:column>
+                </p:row>
+                <p:row>
+                    <p:column>
+                        <p:outputLabel value="Tratamiento e indicaciones:" for="treatmentIPD"/>
+                        <p:editor id="treatmentIPD" widgetVar="editorWidget" value="" width="600" />
+                    </p:column>
+                    <p:column style="vertical-align: top">
+                        <p:outputLabel value="Fecha Limite: " for="limitDateIPD"/>
+                        <p:calendar id="limitDateIPD"/>
+                    </p:column>
+                </p:row>
+            </p:panelGrid>
+        </h:form>
+    </h:body>
+</html>

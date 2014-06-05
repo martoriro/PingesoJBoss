@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <h:outputStylesheet name="./css/default.css"/>
+        <title>Datos del paciente</title>
+    </h:head>
+    <h:body>
+        <h:form id="dataPatientForm" styleClass="panelGridForm">
+            <p:panelGrid columns="1">
+                <p:panel id="personalData" header="Datos Personales" >
+                    <p:panelGrid columns="4" styleClass="panelGridForm">
+                        <p:outputLabel value="Rut: "/><p:outputLabel value="#{dataPatient.rut}"/>
+                        <p:outputLabel value="Nombres: "/><p:outputLabel value="#{dataPatient.names}"/>
+                        <p:outputLabel value="Apellido paterno: "/><p:outputLabel value="#{dataPatient.fathername}"/>
+                        <p:outputLabel value="Apellido Materno: "/><p:outputLabel value="#{dataPatient.mothername}"/>
+                        <p:outputLabel value="Nacionalidad "/><p:outputLabel value="#{dataPatient.nationality}"/>
+                        <p:outputLabel value="Fecha de Nacimiento: "/><p:outputLabel value="#{dataPatient.birthdate}"/>
+                        <p:outputLabel value="Direccion: "/><p:outputLabel value="#{dataPatient.address}"/>
+                    </p:panelGrid>
+                </p:panel>
+                <p:panel id="contacData" header="Información de Contacto" >
+                    <p:panelGrid columns="4" styleClass="panelGridForm">                    
+                        <p:outputLabel value="Pasaporte "/><p:outputLabel value="#{dataPatient.passport}"/>
+                        <p:outputLabel value="Email: "/><p:outputLabel value="#{dataPatient.email}"/>
+                        <p:outputLabel value="Teléfono: "/><p:outputLabel value="#{dataPatient.phone}"/>
+                        <p:outputLabel value="Móvil: "/><p:outputLabel value="#{dataPatient.mobile}"/>
+                        <p:outputLabel value="Fono de Contacto: "/><p:outputLabel value="#{dataPatient.contactPhone}"/>
+                    </p:panelGrid>
+
+                </p:panel>
+                <p:panel id="otherData" header="Otra Información" >
+                    <p:panelGrid columns="4" styleClass="panelGridForm">                    
+                        <p:outputLabel value="Ocupación: "/><p:outputLabel value="#{dataPatient.ocupation}"/>
+                        <p:outputLabel value="Actividad: "/><p:outputLabel value="#{dataPatient.activity}"/>
+                    </p:panelGrid>
+                </p:panel>
+                <p:panelGrid columns="1" styleClass="panelGridForm">
+                    <p:commandButton value="Cerrar" icon="ui-icon-close"/>
+                </p:panelGrid>
+            </p:panelGrid>
+        </h:form>
+    </h:body>
+</html>
