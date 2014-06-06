@@ -4,7 +4,8 @@
     <jta-data-source>java:/jboss/GrupoUNO_BD</jta-data-source>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
-         <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+         <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+         <property name="hibernate.default_schema" value="public"/>
     </properties>
   </persistence-unit>
 </persistence>
